@@ -35,6 +35,10 @@ class PortfoliosController < ApplicationController
     end
   end
 
+  def show
+    @portfolio_item = Portfolio.find(params[:id])
+  end
+
   private
   # Only allow a list of trusted parameters through.
   def portfolio_params
