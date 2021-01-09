@@ -7,5 +7,12 @@ module ApplicationHelper
       "<br/>".html_safe +
       (link_to 'Login', new_user_session_path)
     end
-  end  
+  end
+
+  def source_helper(layout_name)
+    greeting = "Thanks for visiting from #{session[:source]} and you are on #{layout_name} layout"
+    if session[:source]
+      content_tag(:p, greeting, class: 'source-greeting')
+    end
+  end
 end
